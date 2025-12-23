@@ -1,0 +1,20 @@
+{
+  "owners": [
+    { "id": "1", "name": "Ava Criss", "phone": "+22 614 333 0008" },
+    { "id": "2", "name": "John Doe", "phone": "+22 614 333 0009" }
+  ],
+  "animals": [
+    { "id": "1", "name": "Max", "species": "Dog", "ownerId": "1" },
+    { "id": "2", "name": "Bella", "species": "Cat", "ownerId": "2" }
+  ],
+  "consultations": [
+    {
+      "id": "1",
+      "animalId": "1",
+      "date": "2025-12-23",
+      "summary": "Vaccination"
+    }
+  ],
+  "documents": [{ "id": "1", "name": "Report.pdf", "animalId": "1" }]
+}
+
