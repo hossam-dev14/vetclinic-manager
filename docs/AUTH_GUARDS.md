@@ -7,7 +7,7 @@ It ensures:
 - Secure UI access
 - Predictable navigation
 - Clean separation of concerns
-- Consistent AI-generated code (Copilot, Cursor, ChatGPT)
+- Consistent AI-generated code (Copilot, Trae, ChatGPT)
 
 ---
 
