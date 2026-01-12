@@ -1,9 +1,9 @@
-import { Owner, Animal, Consultation, Document } from '../lib/validators';
+import type { Owner, Animal, Consultation, Document } from '../types';
 
 // API utilities for VetClinic Manager
 // Based on API_ROUTES.md
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'http://localhost:5000';
 
 // Generic API helper
 async function apiFetch<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -42,9 +42,9 @@ function createApiService<T>(resource: string) {
 }
 
 // Export API services for each resource
-export const ownersApi = createApiService('owners');
-export const animalsApi = createApiService('animals');
-export const consultationsApi = createApiService('consultations');
+export const ownersApi = createApiService<Owner>('owners');
+export const animalsApi = createApiService<Animal>('animals');
+export const consultationsApi = createApiService<Consultation>('consultations');
 export const documentsApi = createApiService<Document>('documents');
 
 // Helper functions for enriched data

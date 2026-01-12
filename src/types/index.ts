@@ -1,5 +1,3 @@
-// Core entity types based on db.json structure
-
 export type Owner = {
   id: string;
   name: string;
