@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Animal } from '../../lib/validators';
+import type { Document, Animal } from '../../lib/validators';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/Card';
 import { FileTextIcon } from 'lucide-react'; // Assuming Lucide icons are used
 
