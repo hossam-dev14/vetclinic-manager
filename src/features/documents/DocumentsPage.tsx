@@ -1,39 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import { DocumentCard } from '../../components/cards/DocumentCard';
-import { getDocumentsWithAnimals } from '../../lib/api';
-import { Document, Animal } from '../../lib/validators'; // Import Document and Animal types
+import { useDocuments } from './hooks/useDocuments';
 
-interface DocumentWithAnimal extends Document {
-  animal?: Animal;
-}
+export function DocumentsPage() {
+  const { data: documents = [], isLoading, error } = useDocuments();
 
-export const DocumentsPage: React.FC = () => {
-  const [documents, setDocuments] = useState<DocumentWithAnimal[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchDocuments = async () => {
-      try {
-        const data = await getDocumentsWithAnimals();
-        setDocuments(data);
-      } catch (err) {
-        setError('Failed to fetch documents');
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDocuments();
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return <div className="p-4 text-center">Loading documents...</div>;
   }
 
   if (error) {
-    return <div className="p-4 text-center text-red-500">{error}</div>;
+    return <div className="p-4 text-center text-red-500">Failed to fetch documents</div>;
   }
 
   return (
@@ -49,4 +25,4 @@ export const DocumentsPage: React.FC = () => {
       )}
     </div>
   );
-};
+}

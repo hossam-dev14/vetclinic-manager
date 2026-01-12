@@ -22,7 +22,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={
-            <Layout title="Dashboard">
+            <Layout title="Dashboard" >
               <Dashboard />
             </Layout>
           } />
