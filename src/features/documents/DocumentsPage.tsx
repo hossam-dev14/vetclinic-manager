@@ -1,4 +1,5 @@
 import { DocumentCard } from '../../components/cards/DocumentCard';
+import { ContentHeader } from '../../components/layout/ContentHeader';
 import { useDocuments } from './hooks/useDocuments';
 
 export function DocumentsPage() {
@@ -13,8 +14,11 @@ export function DocumentsPage() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Documents</h1>
+    <div className="space-y-6">
+      <ContentHeader
+        title="Documents"
+        description="Track and manage your documents."
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {documents.map((document) => (
           <DocumentCard key={document.id} document={document} />

@@ -6,6 +6,7 @@ import { OwnersPage } from './features/owners/OwnersPage';
 import { AnimalsPage } from './features/animals/AnimalsPage';
 import { ConsultationsPage } from './features/consultations/ConsultationsPage';
 import { DocumentsPage } from './features/documents/DocumentsPage';
+import { LoginPage, RegisterPage, ForgetPasswordPage, ResetPasswordPage } from './features/auth';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,31 +22,62 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
-          <Route path="/" element={
-            <Layout title="Dashboard" >
-              <Dashboard />
-            </Layout>
-          } />
-          <Route path="/owners" element={
-            <Layout title="Owners">
-              <OwnersPage />
-            </Layout>
-          } />
-          <Route path="/animals" element={
-            <Layout title="Animals">
-              <AnimalsPage />
-            </Layout>
-          } />
-          <Route path="/consultations" element={
-            <Layout title="Consultations">
-              <ConsultationsPage />
-            </Layout>
-          } />
-          <Route path="/documents" element={
-            <Layout title="Documents">
-              <DocumentsPage />
-            </Layout>
-          } />
+          <Route
+            path="/login"
+            element={<LoginPage />}
+          />
+          <Route
+            path="/register"
+            element={<RegisterPage />}
+          />
+          <Route
+            path="/forgot-password"
+            element={<ForgetPasswordPage />}
+          />
+          <Route
+            path="/reset-password"
+            element={<ResetPasswordPage />}
+          />
+          <Route
+            path="/"
+            element={
+              <Layout title="Dashboard">
+                <Dashboard />
+              </Layout>
+            }
+          />
+          <Route
+            path="/owners"
+            element={
+              <Layout title="Owners">
+                <OwnersPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/animals"
+            element={
+              <Layout title="Animals">
+                <AnimalsPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/consultations"
+            element={
+              <Layout title="Consultations">
+                <ConsultationsPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/documents"
+            element={
+              <Layout title="Documents">
+                <DocumentsPage />
+              </Layout>
+            }
+          />
         </Routes>
       </Router>
     </QueryClientProvider>

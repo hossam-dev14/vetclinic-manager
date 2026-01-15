@@ -37,3 +37,4 @@ export {
 export { DataTable } from '../table/DataTable';
 
 export { Modal } from '../modals/Modal';
+export { Logo } from './Logo';

@@ -4,6 +4,7 @@ import { Plus, Pencil } from 'lucide-react';
 import { useConsultations } from './hooks/useConsultations';
 import { AddConsultationModal } from './components/AddConsultationModal';
 import { EditConsultationModal } from './components/EditConsultationModal';
+import { ContentHeader } from '../../components/layout/ContentHeader';
 import type { Consultation } from './types';
 
 
@@ -17,13 +18,16 @@ export function ConsultationsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h2 className="text-3xl font-bold text-[#000000]">Consultations</h2>
-        <Button onClick={() => setIsModalOpen(true)}>
-          <Plus className="w-4 h-4 mr-2" />
-          Add Consultation
-        </Button>
-      </div>
+      <ContentHeader
+        title="Consultations"
+        description="Track and manage your consultations."
+        action={
+          <Button onClick={() => setIsModalOpen(true)}>
+            <Plus className="w-4 h-4 mr-2" />
+            Add Consultation
+          </Button>
+        }
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {consultations.map((consultation) => (
