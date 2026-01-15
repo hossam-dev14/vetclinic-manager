@@ -16,6 +16,12 @@ dist-ssr
 # Env
 .env.local
 
+# Trae ai
+.traerules
+docs/
+.trae/
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
