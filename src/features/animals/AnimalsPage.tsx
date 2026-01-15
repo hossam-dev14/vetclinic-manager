@@ -4,6 +4,7 @@ import { Plus, Pencil } from 'lucide-react';
 import { useAnimals } from './hooks/useAnimals';
 import { AddAnimalModal } from './components/AddAnimalModal';
 import { EditAnimalModal } from './components/EditAnimalModal';
+import { ContentHeader } from '../../components/layout/ContentHeader';
 import type { Animal } from './types';
 
 export function AnimalsPage() {
@@ -16,13 +17,16 @@ export function AnimalsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h2 className="text-3xl font-bold text-[#000000]">Animals</h2>
-        <Button onClick={() => setIsModalOpen(true)}>
-          <Plus className="w-4 h-4 mr-2" />
-          Add Animal
-        </Button>
-      </div>
+      <ContentHeader
+        title="Animals"
+        description="Manage your patients and their owners."
+        action={
+          <Button onClick={() => setIsModalOpen(true)}>
+            <Plus className="w-4 h-4 mr-2" />
+            Add Animal
+          </Button>
+        }
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {animals?.map((animal) => (
