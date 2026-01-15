@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginSchema, type LoginFormValues } from '../types';
 import { useAuthActions, useAuthLoading, useAuthError } from '../../../store/authStore';
 import { Button } from '../../../components/ui';
@@ -106,7 +106,7 @@ export function LoginForm() {
                 </div>
               )}
             />
-            <a href="#" className="text-sm font-medium text-[#007BFF] hover:underline">
+            <a href="/forgot-password" className="text-sm font-medium text-[#007BFF] hover:underline">
               Forgot password?
             </a>
           </div>
@@ -118,9 +118,9 @@ export function LoginForm() {
 
         <div className="text-center text-sm text-[#666666]">
           Don't have an account?{' '}
-          <a href="#" className="font-medium text-[#007BFF] hover:underline">
-            Contact Admin
-          </a>
+          <Link to="/register" className="font-medium text-[#007BFF] hover:underline">
+            Create one
+          </Link>
         </div>
       </form>
     </Form>
