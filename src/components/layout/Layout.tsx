@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export function Layout({ children, title }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-[#F8F8F8]">
+    <div className="min-h-screen bg-white">
       <Sidebar />
       <div className="ml-64">
         <Navbar title={title} />
