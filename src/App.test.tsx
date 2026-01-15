@@ -4,7 +4,14 @@ import App from './App';
 
 // Mock the features to isolate App logic
 vi.mock('./features/auth', () => ({
-  LoginPage: () => <div data-testid="login-page">Login Page</div>
+	LoginPage: () => <div data-testid="login-page">Login Page</div>,
+	RegisterPage: () => <div data-testid="register-page">Register Page</div>,
+	ForgetPasswordPage: () => (
+		<div data-testid="forget-password-page">Forget Password Page</div>
+	),
+	ResetPasswordPage: () => (
+		<div data-testid="reset-password-page">Reset Password Page</div>
+	),
 }));
 
 vi.mock('./features/dashboard/Dashboard', () => ({
